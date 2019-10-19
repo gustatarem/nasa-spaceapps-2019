@@ -8,6 +8,8 @@ class User extends Model {
 		}, {
 			sequelize,
 		});
+
+		return this;
 	}
 }
 

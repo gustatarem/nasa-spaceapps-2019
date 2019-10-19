@@ -8,6 +8,8 @@ class Manager extends Model {
 		}, {
 			sequelize,
 		});
+
+		return this;
 	}
 }
 
