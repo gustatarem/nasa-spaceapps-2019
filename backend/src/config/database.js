@@ -6,7 +6,7 @@ module.exports = {
 	database: 'nasa-space-apps-2019',
 	define: {
 		timestamps: true,
-		undescored: true,
+		underscored: true,
 		underscoredAll: true,
 	}
 };
