@@ -3,7 +3,10 @@ const mongoose = require('mongoose')
 const routes = require('./routes')
 
 const app = express()
-mongoose.connect('mongodb+srv://tatarem:tatarem@omnistack-3uhvs.mongodb.net/test?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://tatarem:tatarem@spaceapps-3uhvs.mongodb.net/spaceappschallenge?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
 
 app.use(express.json())
 app.use(routes)
