@@ -7,21 +7,40 @@ import Demand from './app/models/Demand';
 import ManagerController from './app/controllers/ManagerController';
 import CauseController from './app/controllers/CauseController';
 import DemandController from './app/controllers/DemandController';
+import UserController from './app/controllers/UserController';
 
 const routes = new Router();
 
 
+//Users
+//Insert User
+routes.post('/users', UserController.store);
+//Get Users
+routes.get('/users', UserController.show);
+//Get Specific User
+routes.get('/users/:id', UserController.index);
+
 //Managers
-//Get Manager
+//Insert Manager
+routes.post('/managers', ManagerController.store);
+//Get Managers
+routes.get('/managers', ManagerController.show);
+//Get Specific Manager
 routes.get('/managers/:id', ManagerController.index);
 
 //Causes
+//Insert Cause
+routes.post('/causes', CauseController.store);
 //Get Causes
 routes.get('/causes', CauseController.show);
+//Get Causes
+routes.get('/managers/:managerId/causes', CauseController.showByManager);
 //Get Specific Cause
 routes.get('/causes/:id', CauseController.index);
 
 //Demands
+//Insert Demand
+routes.post('/demands', DemandController.store);
 //Get Demands based by causeId
 routes.get('/causes/:causeId/demands', DemandController.show);
 //Get Specific Demand

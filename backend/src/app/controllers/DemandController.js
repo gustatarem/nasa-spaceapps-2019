@@ -2,12 +2,25 @@ import Demand from '../models/Demand';
 
 class DemandController {
 
+	async store(req, res) {
+
+		const { title, description, status, priority, cause_id } = req.body;
+
+		const demand = await Demand.create({
+			title,
+			description,
+			status,
+			priority,
+			cause_id
+		});
+
+		return res.json(demand);
+	}
+
 	async index(req, res) {
 		const id = req.params.id;
 
-		const demand = await Demand.findOne({
-			where: { id }
-		});
+		const demand = await Demand.findByPk(id);
 
 		if (!demand) {
 			return res.status(404).json({
