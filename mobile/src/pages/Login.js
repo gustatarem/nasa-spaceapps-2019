@@ -6,20 +6,20 @@ import logo from '../assets/logo.png'
 export default function Login({navigation}) {
   const [email, setEmail] = useState('')
 
-  useEffect(() => {
-    AsyncStorage.getItem('user').then (user => {
-      if (user) {
-        navigation.navigate('List')
-      }
-    })
-  }, [])
+  // useEffect(() => {
+  //   AsyncStorage.getItem('user').then (user => {
+  //     if (user) {
+  //       navigation.navigate('List')
+  //     }
+  //   })
+  // }, [])
 
   async function handleSubmit() {
-    const response = await api.post('/sessions', {email})
+    // const response = await api.post('/sessions', {email})
 
-    const {_id} = response.data
+    // const {_id} = response.data
 
-    await AsyncStorage.setItem('user', _id)
+    // await AsyncStorage.setItem('user', _id)
 
     navigation.navigate('List')
   }
